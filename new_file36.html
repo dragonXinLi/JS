@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			button{
+				margin: 10px;
+				width: 100px;
+				height: 50px;
+				cursor: pointer;
+			}
+			.show{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button>A</button>
+		<button>B</button>
+		<button>C</button>
+		<button>D</button>
+		<button>E</button>
+		<script>
+			window.onload = function(){
+				var bts = document.getElementsByTagName("button");
+				for(var i = 0 ; i<bts.length ; i ++)
+				{
+					//$ 系统标签页可以为其添加自定义属性
+					bts[i].index = i;
+					bts[i].onmouseover = function (){
+//						var index = 0;
+						for ( var i =0 ; i < bts.length ; i ++)
+						{
+//							if(bts[i] === this)
+//							{
+//								index = i;
+//							}
+							bts[i].className = "";
+						}
+						this.className = "show";
+						alert(this.index);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

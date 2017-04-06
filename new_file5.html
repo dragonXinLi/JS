@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- HTML结构 -->
+<ol id="test-list">
+    <li class="lang">acheme</li>
+    <li class="lang">yavaScript</li>
+    <li class="lang">python</li>
+    <li class="lang">ruby</li>
+    <li class="lang">aaskell</li>
+</ol>
+
+<ul id = "test-listOne">
+	<li>JavaScript</li>
+	<li>Swift</li>
+	<li>HTML</li>
+	<li>JavaScript</li>
+	<li>ANST</li>
+	<li>CSS</li>
+	<!--<li>DirectX</li>
+	<li>CSS</li>	-->
+</ul>
+		<script>
+			var testList = document.getElementById("test-list");
+			var newArr = Array.from(testList.children).sort(function(a,b)
+			{
+				return a.innerText > b.innerText;
+			});
+//			alert(newArr);
+		for (var i = 0 ; i < newArr.length ; i++) {
+			testList.appendChild(newArr[i]);
+		}
+//		var list=document.getElementById('test-list'); 
+//		var s=Array.from(list.children).sort((x1,x2)=>{
+//			if(x1.innerText>x2.innerText) 
+//				return 1;
+//			else 
+//				return -1;
+//		}) 
+//		list.innerHTML=""; 
+//		s.forEach(x=>{list.appendChild(x)});
+
+
+
+//var testListOne = document.getElementById("test-listOne");
+//console.log(testListOne);
+//console.log(testListOne.children.length);
+//var count = testListOne.children.length;
+//var index = 0;
+//for(var i = 0;i<count;i++)
+//{
+//	console.log(testListOne.children[index]);
+//	if(testListOne.children[index].innerText !== "JavaScript" && testListOne.children[index].innerText !== "HTML" && testListOne.children[index].innerText !== "CSS")
+//	{
+//		testListOne.removeChild(testListOne.children[index]);
+//	}else
+//	{
+//		index ++;
+//	}
+//}
+
+var li = document.getElementById("test-listOne");
+var set1 = new Set(["HTML","CSS","JavaScript"]);
+for (var x of li.children)
+{
+	if(!set1.has(x.innerText))
+	{
+		li.removeChild(x);
+	}
+}
+
+
+		</script>
+	</body>
+</html>

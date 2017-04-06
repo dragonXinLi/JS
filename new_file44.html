@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<script src="js/new_file38.js"></script>
+		<script>
+			var div = getSingleEleByClassName("box");
+			div.style.cssText = "width: 100px; height: 100px; background-color: red;"
+			div.onclick = function(){
+				div.style.display = "none";
+				this.style.opacity = "0";
+			}
+		</script>
+	</body>
+</html>

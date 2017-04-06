@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input{
+				width: 300px;
+				height: 36px;
+				padding-left: 5px;
+				color: #ccc;
+			}
+			label{
+				position: absolute;
+				color: #ccc;
+				top: 72px;
+				cursor: text;
+				padding-left: 10px;
+				font-size: 12px;
+			}
+			.are{
+				padding-left: 45px;
+			}
+			div{
+				margin-bottom: 15px;
+			}
+			body{
+				margin-top: 0px;
+			}
+			#inp2{
+				
+			}
+			.hide{
+				display: none;
+			}
+			.show{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="jd">
+			京东:<input type="text" value="我是京东" id="inp1"/>
+		</div>
+		<div id="tb">
+			淘宝:<label for="lb">我是淘宝</label><input type="text" id="inp2"/>
+		</div>
+		<div id="place">
+			placeholder:<input type="text" name="" id="inp3" value="" placeholder="我是placeholder"/>
+		</div>
+		<script>
+			var inp1 = document.getElementById("inp1");
+			var inp2 = document.getElementById("inp2");
+			var inp3 = document.getElementById("inp3");
+			inp1.onfocus = function(){
+				if(inp1.value === "我是京东")
+				{
+					inp1.value = "";
+				}
+			}
+			inp1.onblur = function(){
+				if(inp1.value === "")
+				{
+					inp1.value = "我是京东";
+				}
+			}
+			var lb = document.getElementsByTagName("label")[0];
+			var s = lb.offsetLeft;
+			inp2.oninput = function(){
+				if(inp2.value === "")
+				{
+					lb.className = "show are"
+				}else
+				{
+					lb.className = "hide";
+				}
+			}
+		</script>
+	</body>
+</html>

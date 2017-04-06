@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*stype没有:*/
+			button{
+				margin: 10px;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			.show{
+				display: block;
+			}
+			.hide{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">隐藏</button>
+		<div>
+        		临千仞之溪，非才长也，位高也！
+    		</div>
+    		<script>
+    			window.onload = function(){
+    				var div = document.getElementsByTagName("div")[0];
+    				var btn = document.getElementById("btn");
+    				btn.onclick = function(){
+    					console.log(this);
+    					console.log(btn.innerText);
+    					//$ innerHTML有着innerText的功能
+    					console.log(btn.innerHTML);
+    					if(btn.innerText === "隐藏")
+    					{
+    						div.className = "hide";
+    						btn.innerText = "显示";
+    					}else
+    					{
+    						div.className = "show";
+    						btn.innerText = "隐藏";
+    					}
+    				}
+    			}
+    		</script>
+	</body>
+</html>

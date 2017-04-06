@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var nineArr = [];
+			nineArr.push(1); //返回数组的长度
+			var count = nineArr.push("LL");
+			console.log(nineArr);
+			console.log(count);
+
+			console.log(nineArr.pop()); //返回被删除的元素
+			console.log(nineArr);
+
+			var eightTine = nineArr.unshift("SKeyFeny");
+			console.log(eightTine);
+			console.log(nineArr);
+
+			//			var delet = nineArr.shift();
+			//			console.log(delet);
+			//			console.log(nineArr);
+			//			//添加到都返回数组长度，删除都返回被删除的值
+
+			var reverArr = nineArr.reverse(); //原数组也被反转了,并且也会生成新数组
+			console.log(nineArr);
+			console.log(reverArr);
+
+			//sort
+			var threeTwoArr = [3, 5, 42, 535, 1, 5, 2, 3, 6, 8];
+			console.log(threeTwoArr.sort(function(a, b) {
+				//>0升序，<0降序
+				return a - b;
+			}));
+			console.log(threeTwoArr);
+			<!---------------------------------------------------->
+			var fourOneArr = [1,2,3];
+			var fourTwoArr = ['1','2','3'];
+			console.log(fourOneArr.concat(fourTwoArr));
+			console.log(fourOneArr);
+			console.log(fourTwoArr);
+//			var count = ({}+{}).length;
+//			console.log(count);
+			var fourEight = fourOneArr.concat(fourTwoArr);
+			console.log(fourEight.slice(2));//start-end.从第几个位置开始算起.x<=U<y
+			console.log(fourEight.slice(-2));
+           <!---------------------------------------------------->
+           var fiveTwo = [1,2,3];
+           console.log(fiveTwo.splice(2,1,'4'));//改变原数组，并返回被修改的元素
+           console.log(fiveTwo);
+           <!---------------------------------------------------->
+           var fiveSix = [3,4,5,6,7,8,9,0];
+           console.log(fiveSix.indexOf(0));//两种查找索引的结果相同
+           console.log(fiveSix.lastIndexOf(9));
+           <!-----------------------数组的遍历----------------------------->
+           var arr = ["关长","张飞","赵龙","马超","黄忠"];
+           
+           var value = arr.every(function(element,index,array){
+//         	如果为true,会一直遍历下去
+           	element = 'aaa';
+           	array[index] = element;
+           	console.log(element);
+           	console.log(index);
+           	console.log(array);
+           	if(element.length > 2)
+           	{
+           		return false;
+           	}
+           	return true;
+           })
+           console.log(value);
+           <!-----------------------filter----------------------------->
+           var sevenSenvenThing = ['大结局',3,'ss',123421];
+           console.log(sevenSenvenThing.filter(function(element,index,array){
+           	console.log(typeof(element));
+			//$ instanceof 只能判断数组和对象,不能判断字符串和数字 
+           	if(typeof(element) === 'number')
+           	{
+           		//判断是否是字符串用typeof(xx) === 'string'||'number'
+           		return true;
+           	}
+           	return false;
+           }))
+           <!-----------------------foreach----------------------------->
+           var eightNine = [3,4,5,6,7];
+           console.log(eightNine.forEach(function(element,index,array){
+           	//不返回新数组，只用于操作数组中的元素
+           	console.log(element);
+           	element = 'a';
+//         	array[index] = 'a';
+//         	return element;
+           }))
+           console.log(eightNine);
+           <!-----------------------map----------------------------->
+           var nineNine = [3,4,5,6,7,8];
+           console.log(nineNine.map(function(element,index,array){
+           	return element + 10;
+           }))
+           
+           <!-----------------------same----------------------------->
+           var onehunderdandfive = [3,4,5,6,2,45];
+           console.log(onehunderdandfive.some(function(ele,index,array){
+           	//遍历返回true||fales
+				return false;
+           }))
+           <!-----------------------clear arr----------------------------->
+           var Onehundredandeleven = [2,3,45];
+//         console.log(Onehundredandeleven.splice(0));
+//         console.log(Onehundredandeleven);
+//         Onehundredandeleven.length = 0;
+//         console.log(Onehundredandeleven);
+			Onehundredandeleven = [];
+			console.log(Onehundredandeleven);
+           <!-----------------------练习----------------------------->
+           var arr = ["刘备","张飞","关羽"];
+           console.log(arr.join('|'));
+           
+           var arr = ['a','b','c','a','e','a'];
+           var jsn = {};
+           for(var i = 0 ; i < arr.length ; i++)
+           {
+           	if(jsn[arr[i]])
+           	{
+           		jsn[arr[i]] += 1;
+           	}else
+           	{
+           		jsn[arr[i]] = 1;
+           	}
+           }
+           console.log(jsn);
+           
+           <!-----------------------构造函数----------------------------->
+           
+           var num1 = new Number();
+           console.log(num1);
+           console.log(num1 instanceof Object);
+           var bool = new Boolean(true);
+           console.log(bool);
+           console.log(bool instanceof Object);
+           var str = new String("222");
+           console.log(str);
+           <!---------------------------------------------------->
+           var arr = [2,3,4,5,6,2,23,5,2];
+           //sort的原理实现
+           var aa = sort(arr,function(a,b){
+           	return a - b;
+           });
+           console.log(aa);
+           
+               function sort(arr,fn){
+		        for(var i=0;i<arr.length-1;i++){
+		            for(var j=0;j<arr.length-1;j++){
+		                if(fn(arr[j],arr[j+1])>0){
+		                    var temp = arr[j];
+		                    arr[j] = arr[j+1];
+		                    arr[j+1] = temp;
+		                }
+		            }
+        }
+        return arr;
+    }
+		</script>
+	</body>
+
+</html>

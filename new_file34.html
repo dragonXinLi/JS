@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			.wrap{
+				margin: 100px auto 0;
+				width: 300px;
+			}
+			table{
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 1px solid #c0c0c0;
+				width: 300px;
+			}
+			th,td{
+				border: 1px solid #d0d0d0;
+				color: #4040460;
+				padding: 10px;
+			}
+			th{
+				background-color: #09c;
+				 font: bold 16px "微软雅黑";
+				 color: #fff;
+			}
+			td {
+            font: 14px "微软雅黑";
+        }
+        tbody tr{
+        		background-color: #f0f0f0;
+        }
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+		</style>
+	</head>
+	<body>
+		<div id="di" class="wrap">
+			<table border="" cellspacing="" cellpadding="">
+				<thead>
+					<tr>
+						<th><input type="checkbox" name="theadInp" id="theadInp" value="" /></th>
+						<th>菜名</th>
+						<th>饭店</th>
+					</tr>
+				</thead>
+				<tbody id="tb">
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>地三鲜</td>
+						<td>田老师</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>西红柿炒鸡蛋</td>
+						<td>田老师</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>醋溜土豆丝</td>
+						<td>田老师</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>萝卜干炒黄豆儿</td>
+						<td>田老师</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			window.onload = function()
+			{
+				var inp1 = document.getElementById("theadInp");
+				var ele = document.getElementsByTagName("tbody")[0];
+				var inparr = ele.getElementsByTagName("input");
+				
+				inp1.onclick = function(){
+					for(var i =0;i<inparr.length;i++)
+					{
+						inparr[i].checked = inp1.checked;
+					}
+				}
+				for(var i = 0 ; i < inparr.length ; i++)
+				{
+					inparr[i].onclick = fn;
+				}
+				function fn(){
+					var bl = true;
+					for(var i =0;i<inparr.length;i++)
+					{
+						if(!inparr[i].checked)
+						{
+							bl = false;
+						}
+					}
+					console.log(bl);
+					inp1.checked = bl;
+				}
+			}
+			var div = document.getElementsByTagName("div")[0];
+			div.aaa = "aaa";//绑定的属性不会出现在标签上
+			console.log(div.aaa);
+			div.setAttribute("bbb","ccc");//绑定的属性会出现在标签上
+			console.log(div.getAttribute("bbb"));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.num{
+				border: 2px solid pink;
+			}
+			.pas{
+				border: 2px solid pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			账号：<input type="text" onblur="fn(this)"/> <br /><br />
+			密码：<input type="password" onblur="fn(this)"/>
+		</div>
+		<script>
+			function fn(obj){
+				if(obj.type === "text" && obj.value.length !== 6)
+				{
+					obj.className = "num";
+					console.log(obj);
+				}else
+				{
+					obj.className = "";
+				}
+				if(obj.type === "password" && obj.value.length !== 3)
+				{
+					obj.className = "pas";
+				}else
+				{
+					obj.className = "";
+				}
+			}
+		</script>
+	</body>
+</html>

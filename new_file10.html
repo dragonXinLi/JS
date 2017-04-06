@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+//			function fn1(a)
+//			{
+//				alert(a +a);
+//			}
+//			function fn1(a)
+//			{
+////				如果函数名一样,后面的函数会覆盖前面的函数
+//				alert(a / a);
+//			}
+//			fn1(2);
+
+//			function fn(a,b)
+//			{
+//				return a + b;
+//			}
+//			function fn1(a,b)
+//			{
+//				return b + 2;
+//			}
+////			var f = fn(2,3);
+////如果函数的实参个数<形参的个数,那么没有实参的形参的值为undefine,对没有实参的形参(undefine)进行运算，结果为NaN
+//			var f = fn1(2);
+//			console.log(f);
+//			var f1 = fn(2,3,4,5);
+//			console.log(f1);
+
+//JS的每个函数都可以有返回值，函数内有return正常返回，没有return就返回undefine
+//			var a = fn();
+//			function fn()
+//			{
+//				var 
+//					a = 10;
+//					b = 7;
+////				console.log(a);
+//////				return;
+////				console.log(b);
+//			}
+////			console.log(a);
+//			console.log(fn);
+
+//函数的3种定义方式
+
+		fn1();
+		function fn1()
+		{
+			alert(2+2);
+		}
+		fn1();
+		
+		
+//		fn2();此匿名定义函数的方式，调用函数需要在该函数定义之后
+		var fn2 = function()
+		{
+			alert(3+3);
+		}
+		fn2();
+		
+//		fn3();此构造函数定义函数的方式，调用函数需在该定义之后
+		var fn3 = new Function("alert(4+4)");
+		fn3();
+
+		</script>
+	</body>
+</html>

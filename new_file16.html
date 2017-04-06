@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*.box{
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				background-color: pink;
+			}*/
+			.div1{
+				background-color:#000000;
+				height:400px;
+				width:400px;
+				background-color: pink;
+				display:none;
+				}
+
+		</style>
+	</head>
+	<body>
+		<input type="button" id="butn" value="显示/隐藏" onclick="toggle('div1')" />
+		<center>
+		<div class="div1"></div></center>
+
+
+		<!--<div class="box"></div>
+		<input type="button" onclick="fn('.box')"/>-->
+		<script>
+//			function objec(name)
+//			{
+//				
+//			}
+//			function objec(student)
+//			{
+//				console.log(student.name);
+//			}
+//			
+//			var hero = new Object();
+//			hero.money = 1000;
+//			hero.level = 5;
+//			hero.actio = function (){
+//				alert("加油");
+//				return 555;
+//			}
+//			
+//			console.log(hero);
+//			console.log(hero.money);
+//			console.log(hero.level);
+//			console.log(hero.actio());
+
+//---------------------------------------
+
+//			function createStudent(name){
+//				var student = new Object();
+//				student.name = name;
+//				student.acti = function(){
+//					alert(`我是${name}`);
+////					alert("函数创建对象");
+//				}
+//				return student;
+//			}
+//
+//			var student1 = createStudent("LL");
+//			var student2 = createStudent("qjj");
+//			console.log(student1.name);
+//			console.log(student2.name);
+//			student1.acti();
+//			student2.acti();
+
+//--------------------------------
+
+//			function student (name)
+//			{
+//				this.name = name;
+////				this代表使用此函数创建实例的对象
+//				this.act = function()
+//				{
+////					alert("woshi LL");
+//					console.log(this);
+//				}
+////				return this;不需要再返回实例对象
+//			}
+//			var student1 = new student("LL");
+//			console.log(student1.name);
+//			student1.act();
+
+//----------------------------------------------
+
+//			var student = new Object();
+//			student.name = "LL";
+//			student["age"] = 20;
+////			函数名不能用纯数字
+//			student[111] = function()
+//			{
+//				console.log(student.name);
+//			}
+//			console.log(student);
+//			student.111();
+
+//------------------------------------------------
+//一个参数取整,两个参数进制转换
+//			var num = parseInt(45,8);
+//			console.log(num);
+//			
+//			var str = 17;
+//			console.log(str.toString());
+//			console.log(str.toString(2));
+
+//---------------------------------------------
+//			function fn(name)
+//			{
+//				var div = document.getElementsByClassName(name)[0];
+//				if(div.style.display === "none")
+//				{
+//					div.style.display = "block";
+//				}else
+//				{
+//					div.style.display = "none";	
+//				}
+//			}
+			
+			
+			function toggle(targetid){
+			    if (document.getElementById){
+			    	console.log(targetid);
+//			        target=document.getElementById(targetid);
+			        var target=document.getElementsByClassName(targetid)[0];
+			        console.log(target);
+			            if (target.style.display=="block"){
+			                target.style.display="none";
+			            } else {
+			                target.style.display="block";
+			            }
+			    }
+}
+		</script>
+	</body>
+</html>

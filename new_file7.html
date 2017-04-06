@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id = "test-from" onsubmit="return checkForm()">
+			<input type="text" />
+			<!--<button type="button" onclick="fn()">submit</button>-->
+			<button type="submit">submit</button>
+		</form>
+		<form onsubmit="return checkFrom2()">
+			<input type="text" id = "text1" />
+			<input type="hidden" id = "text2" name="userName" />
+			<button type="submit">submit</button>
+		</form>
+	</body>
+	<script>
+		function fn(){
+			var from = document.getElementById("test-from");
+			console.log(from);
+			from.submit();
+		}
+		function checkForm(){
+			var form = document.getElementById("test-from");
+			return true;
+		}
+		function checkFrom2()
+		{
+			var text1 = document.getElementById("text1");
+			var text2 = document.getElementById("text2");
+//			text2.value = toMD5(text1.value);
+			text2.value = text1.value;
+			console.log(text2.value);
+			return true;
+		}
+	</script>
+</html>

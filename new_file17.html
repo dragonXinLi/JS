@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			var obj = {name:"LL","age":22,say:function(){
+//				alert("hello");
+//			}};
+//			console.log(obj);
+//			console.log(obj.name);
+//			console.log(obj.age);
+//			obj.say();
+			
+//			json是特殊的对象字面量
+			var jsn = {"name":"ll","age":22};
+//			console.log(jsn.length);
+			for (x in jsn)
+			{
+				console.log(x);
+				console.log(jsn[x]);
+			}
+			console.log(jsn);
+			var arr = [876,42,1];
+			for( x  in arr)
+			{
+				console.log(x);
+				console.log(arr[x]);
+			}
+//			for in 遍历对象字面量和数组，前面的参数分别代表key和索引
+		</script>
+	</body>
+</html>

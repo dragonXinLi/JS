@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input {
+				display: block;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<input type="text" name="" id="" value="" />
+		<input type="text" name="" id="" value="" />
+		<input type="text" name="" id="" value="" />
+		<input type="text" name="" id="" value="" />
+		<button>设置</button>
+		<script src="js/new_file38.js"></script>
+		<script>
+			window.onload = function(){
+				var inps = document.getElementsByTagName("input");
+				var but = getNextNode(inps[inps.length - 1]);
+				but.onclick = function(){
+					this.index = !this.index;
+					if(!this.index)
+					{
+						console.log(this.index);
+						for(var i = 0 ; i < inps.length ; i ++){
+							inps[i].onfocus = function (){
+								this.style.backgroundColor = "";
+								this.style.border = "";
+							}
+							inps[i].onblur = function (){
+								this.style.backgroundColor = "";
+								this.style.border = "";
+							}
+						}
+						return;
+					}
+					for(var i = 0 ; i < inps.length ; i ++){
+						inps[i].onfocus = function (){
+							this.style.backgroundColor = "#ccc";
+							this.style.border = "2px solid red";
+						}
+						inps[i].onblur = function (){
+							this.style.backgroundColor = "";
+							this.style.border = "";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

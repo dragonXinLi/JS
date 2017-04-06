@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			window.onload = function(){
+				var img = document.getElementById("box");
+				var a = document.getElementsByTagName("a")[0];
+				function fnaaa(){
+					img.src = "img/image06-09/2-small.jpg";
+				}
+//				a.onclick = function(){
+//					img.src = "img/image06-09/2-small.jpg";
+//					return false;
+//				}
+			}
+
+		</script>
+		<a href="#" style="margin: 10px; display: block;" onclick="fnaaa(); return false;">链接</a>
+		<img id="box" src="img/image06-09/1-small.jpg" width="400px"/>
+
+	</body>
+</html>

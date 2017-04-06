@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+////			只有函数可以提前调用,变量必须先定义,再使用
+//						fn();
+////			console.log(num2);
+//			console.log(++num3);
+//			
+//			num1 = 3;
+//			console.log(num1);
+//			function fn()
+//			{
+//				var num2 = 4;
+////				在函数内容定义的全局变量,在外部直接调用会提示没有定义此值,必须在调用此函数之后使用该全局变量
+//				num3 = 5;
+//			}
+
+
+
+//		----------------------------------
+//		function fn()
+//		{
+////			隐士全局变量
+////			var
+////			a=b=c=2;
+//
+////			var a=2 ; b= 2 ; c= 2;
+//
+////			var a = 2 , b = 2 , c = 2;
+//
+//		}
+//		fn();
+////		console.log(a);
+//		console.log(b);
+//		console.log(c);
+
+//----------------------------------
+//		var a;
+//		console.log(a);
+//		a = 2;
+//		console.log(a);
+//var a = 20;
+//fn();
+//function fn()
+//{
+//	console.log(a);
+//	var a = 10;
+//}
+
+//var a = 18;
+//    f1();
+//    function f1(){
+//        var b=9;
+//        console.log(a);
+//        console.log(b);
+//        var a = '123';
+//    }
+
+           f2();
+    console.log(cc);
+    console.log(bb);
+    console.log(aa);
+    function f2(){
+        var aa = bb = cc = 9;
+        console.log(aa);
+        console.log(bb);
+        console.log(cc);
+    }
+    
+		</script>
+	</body>
+</html>

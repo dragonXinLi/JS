@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr1 = [1,2,3];
+			var arr2 = new Array(1,2);
+			console.log(arr1 instanceof Array);
+			console.log(arr2 instanceof Array);
+			console.log(Array.isArray(arr1));
+			console.log(Array.isArray(arr2));
+			
+			var str1 = "abc";
+			var str2 = new String("bcs");
+//			console.log(str1 instanceof String);
+//			console.log(str2 instanceof String);
+
+//			var stu = new student();
+//			function student(){
+//				
+//			}
+//			console.log(stu instanceof student);
+//			console.log(stu);
+
+			console.log(arr1.toString());//字符串
+			console.log(typeof(arr1.toString()));
+			console.log(typeof(arr1.valueOf()));//对象
+			
+			console.log("-------------------------------------");
+			
+			var threefour = ["LL","JJ","AA"];
+			console.log(threefour.join("-"));
+			console.log(threefour.join(""));
+			console.log(threefour.join(" "));
+			
+		</script>
+	</body>
+</html>

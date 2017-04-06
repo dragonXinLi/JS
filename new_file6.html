@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id = "email" value="sssss"/>
+		<button style="width: 50"  onclick="fn()"></button>
+		<br />
+		<input type="password" />
+		<br />
+		<label> <input type="radio" name="weekday" id="monday" value="1"/>monday</label>
+		<label> <input type="radio" name="weekday" id="tuesday" value="2"/>tuesday</label>
+		<button onclick="fn()"></button>
+		<br />
+		<input type="checkbox" />
+		<br />
+		<select></select>
+		<br />
+		<input type="hidden" />
+		<br />
+		<input type="date" value="2017-03-18">
+		<br />
+		<script>
+			function fn()
+			{
+				var input = document.getElementById("email");
+				console.log(input.value);
+				input.value = "ahhahahahahh";
+				var radion = document.getElementById("monday");
+				console.log(radion.value);
+				var radion2 = document.getElementById("tuesday");
+				console.log(radion2.value);
+				console.log(radion.checked);
+				console.log(radion2.checked);
+				radion.checked = true;
+				radion2.checked = true;
+			}
+		</script>
+	</body>
+</html>

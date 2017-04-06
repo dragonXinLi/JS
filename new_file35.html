@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div
+			{
+				width: 500px;
+				height: 400px;
+				border: 1px solid #ccc;
+				margin: 100px auto;
+				overflow: hidden;
+			}
+			ul{
+				width: 500px;
+				height: 40px;
+				margin-left: 0px;
+				list-style: none;
+			}
+			li{
+				background-color: rosybrown;
+				cursor: pointer;
+				float: left;
+				width: 100px;
+				height: 40px;
+				text-align: center;
+				font: 600 18px/40px "simsun";
+			}
+			span{
+				background-color: yellow;
+				display: none;
+				width: 500px;
+				height: 360px;
+				text-align: center;
+				font: 700 150px/360px "simsun";
+			}
+			#current{
+				background-color: yellow;
+			}
+			.show{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<ul>
+				<li id="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<span class="show">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+				<div id="">
+			<ul>
+				<li id="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<span class="show">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+				<div id="">
+			<ul>
+				<li id="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<span class="show">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+				<div id="">
+			<ul>
+				<li id="current">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<span class="show">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+		<script>
+			var divs = document.getElementsByTagName("div");
+			for(var i = 0; i < divs.length ; i++)
+			{
+				divs[i].index = i + 1;
+				fn2(divs[i]);
+			}
+			
+			function fn2(ele){
+				console.log(ele.index);
+				var lis = ele.getElementsByTagName("li");
+				var sps = ele.getElementsByTagName("span");
+				for(var i = 0 ; i < lis.length ; i++)
+				{
+	//				lis[i].onclick = fn;
+					lis[i].onmouseover = fn;
+					lis[i].index = i;
+				}
+				function fn()
+				{
+	//				var index = 0;
+					for(var i = 0 ; i < lis.length ; i++){
+	//					if(lis[i] === this)
+	//					{
+	//						console.log(i);
+	//						index = i;
+	//					}
+						lis[i].id = "";
+						sps[i].className = "";
+					}
+					this.id = "current";
+	//				sps[index].className = "show";
+					sps[this.index].className = "show";
+				}	
+			}
+		</script>
+	</body>
+</html>

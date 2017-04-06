@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.nodeSmall {
+            width: 50px;
+            height: 50px;
+            background: url(img/images06-10/bgs.png) no-repeat -159px -51px;
+            position: fixed;
+            right: 10px;
+            top: 40%;
+        }
+        .erweima {
+            position: absolute;
+            top: 0;
+            left: -150px;
+        }
+        .nodeSmall a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            /*top: px;
+            position: absolute;*/
+        }
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }	
+		</style>
+	</head>
+	<body>
+		<div class="nodeSmall" id="node_Small" style="background-color: pink;">
+			<!--<div class="erweima hide" id="er" style="background-color: bisque;">-->
+				<img src="img/images06-10/456.png" class="erweima hide" id="er" alt="二维码"/>
+			<!--</div>-->
+			<a href="#" ></a>
+		</div>
+		<script>
+			var div = document.getElementById("er");
+			var a = document.getElementsByTagName("a")[0];
+			function mousrover(){
+				div.className = "erweima show";
+				console.log(a.innerHTML);
+			}
+			function moursout(){
+				div.className = "erweima hide";
+				console.log(a.innerHTML);
+			}
+			a.onmouseover = mousrover;
+			a.onmouseout = moursout;
+		</script>
+	</body>
+</html>

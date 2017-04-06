@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="bt1">识别鲤鱼</button>
+		<button id="bt2">去掉</button>
+		<select id="sel" multiple>
+			<option>香蕉</option>
+			<option>苹果</option>
+			<option>鲤鱼</option>
+			<option>鸭梨</option>
+		</select>
+		<script>
+			var bt1 = document.getElementById("bt1");
+			var bt2 = document.getElementById("bt2");
+			var sel = document.getElementsByTagName("select"[0]);
+			var opts = document.getElementsByTagName("option");
+			bt1.onclick = function(){
+				fn();
+				opts[2].selected = true;
+			}
+			bt2.onclick = function(){
+				fn();
+			}
+			function fn(){
+				for(var i = 0; i <opts.length ; i++)
+				{
+					opts[i].selected = false;
+				}
+			}
+		</script>
+	</body>
+</html>

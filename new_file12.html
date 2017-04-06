@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			console.log(getDays(2017,3,23));
+			function getDays(year,month,day)
+			{
+				var arr = [31,28,31,30,31,30,31,31,30,30,31];
+				
+				for (var i = 0 ; i < month - 1 ; i++) {
+					day += arr[i];
+				}
+				
+				if(isNr(year))
+				{
+					day ++;
+				}
+				return day;
+			}
+			
+			console.log(isNr(2017));
+			function isNr(year)
+			{
+				if(year % 4 === 0 && year % 100 === 0 || year % 400 === 0)
+				{
+					return true;
+				}
+				return false;
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

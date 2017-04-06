@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box2"></div>
+			<div class="box1"></div>
+			
+		</div>
+		<script>
+			var box1 = document.getElementsByClassName("box1")[0];
+			var box2 = document.getElementsByClassName("box2")[0];
+			console.log(box1);
+			console.log(box1.parentNode);
+			console.log(box2.nextElementSibling);//兄弟节点和元素前后顺序有关
+			console.log(box1.parentNode.firstElementChild);//单个子节点用firstElementChild
+			console.log(box2.parentNode.firstChild);
+			console.log(box1.parentNode.childNodes[0]);
+			console.log(box1.parentNode.children[0]);//全部子节点用child
+			
+           <!-----------------------create----------------------------->
+           var aa = document.createElement("li");
+           var bb = document.createElement("fjdksjkls");
+           console.log(aa);
+           console.log(bb);
+           
+           var box = document.getElementsByClassName("box")[0];
+           box.appendChild(aa);
+           box.insertBefore(bb,aa);
+           
+           box.removeChild(bb);
+           aa.parentNode.removeChild(aa);
+           
+           var aa = box.cloneNode();
+           var bb = box.cloneNode(true);
+           
+           console.log(aa);
+           console.log(bb);
+		</script>
+	</body>
+</html>

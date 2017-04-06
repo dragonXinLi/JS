@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				cursor: pointer;
+			}
+			.aa{
+				width: 200px;
+				height: 400px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--行内绑定事件直接写执行方法们不需要定义函数-->
+		<!--<div id="box" onclick="console.log(div)">box</div>-->
+		<div id="box">box</div>
+		<p>xxxxxx</p>
+		<script>
+			//$ 预防在js中操作节点的时候，html还没有加载完成
+			window.onload = function(){
+			var div = document.getElementById("box");
+			div.onclick = fn;
+//			div.onclick = function(){
+////				window.alert(1);
+////				div.style.width = "200px";
+////				div.style.height = "300px";
+////				div.style.backgroundColor = "red"; 
+////				div.className = "aa";
+//				
+//			}
+//			div.onclick = fn;//这里在方法后面不能写()，否则就是返回函数的返回值
+			function fn(){
+				alert(1);
+			}
+		}
+		</script>
+	</body>
+</html>

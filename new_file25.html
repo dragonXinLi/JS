@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/image06-09/jd1.png" class="box" title="图片" alt="京东狗" id="aa" />
+		<script>
+			window.onload = function(){
+				var img = document.getElementById("aa");
+				console.log(img.src);
+				console.log(img.title);
+				img.src = "img/image06-09/jd2.png";
+				img.title = "哈哈";
+				console.log(img["src"]);
+				console.log(img["title"]);
+				console.log(img.tagName);
+				
+				console.log(img.id);
+				console.log(img.getAttribute("id"));
+				img.setAttribute("id","bb");
+				//$ 对于原元素没有的属性，添加的话，该属性值需要用getAttribute方法获取
+				img.setAttribute("dd","xx");
+				console.log(img.id);
+				console.log(img["dd"]);
+				console.log(img.getAttribute("dd"));
+			}
+		</script>
+	</body>
+</html>

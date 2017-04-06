@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+		            font-family: "Helvetica", "Arial", serif;
+		            color: #333;
+		            background-color: #ccc;
+		            margin: 1em 10%;
+		        }
+		        h1{
+		        		color: #333333;
+		        		background-color: transparent;
+		        }
+		        a{
+		        		color: #c60;
+		        		background-color: transparent;
+		        		font-weight: bold;
+		        		text-decoration: none;
+		        }
+		        li{
+		        		/*默认是垂直向下排列,float是从左向右排列*/
+		        		float: left;
+		        		padding: 1em;
+		        		/*前面没有默认的...*/
+		        		list-style: none;
+		        }
+		        ul{
+		        		padding: 0px;
+		        		/*list-style: none;*/
+		        }
+		        /*id*/
+		        #imagegallery{
+		        		list-style: none;
+		        }
+		        #imagegallery li{
+		        		margin: 0px 20px 20px 0px;
+		        		padding: 0px;
+		        		display: inline;
+		        }
+		        #imagegallery li a img{
+		        		border: 0;
+		        }
+		</style>
+	</head>
+	<body>
+		<h2>美女画廊</h2>
+		<a>注册</a>
+		<ul id="imagegallery">
+			<li>
+				<a href="img/image06-09/1.jpg" title="美女A">
+					<img src="img/image06-09/1-small.jpg" width="100px" alt="美女A"/>
+				</a>
+			</li>
+			<li>
+				<a href="img/image06-09/2.jpg" title="美女B">
+					<img src="img/image06-09/2-small.jpg" width="100px" alt="美女B"/>
+				</a>
+			</li>
+			<li>
+				<a href="img/image06-09/3.jpg" title="美女C">
+					<img src="img/image06-09/3-small.jpg" width="100px" alt="美女C"/>
+				</a>
+			</li>
+			<li>
+				<a href="img/image06-09/4.jpg" title="美女D">
+					<img src="img/image06-09/4-small.jpg" width="100px" alt="美女D"/>
+				</a>
+			</li>
+		</ul>
+		<div style="clear: both;"></div>
+		<img id="img" src="img/image06-09/placeholder.png" width="450px"/>
+		<p id="des">请选择一张照片</p>
+		
+		<script>
+			window.onload = function(){
+				var img = document.getElementById("img");
+				var p = document.getElementById("des");
+				var arr = document.getElementsByTagName("a");
+				for(var i = 0 ; i < arr.length ; i++)
+				{
+					arr[i].onclick = function(){
+						img.src = this.href;
+						p.innerHTML = this.title;
+						//$ 为a链接添加点击事件，不重新跳出网页需要reture false.
+						return false;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

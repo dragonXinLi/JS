@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				list-style-type: none;
+				float: left;
+				margin:5px;
+				width: 80px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			.box1{
+				background-color: orange;
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			<!--a标签里的#和javascript:void(0)显示颜色不一样-->
+			<li class="box1" id=""><a href="#">首页</a></li>
+			<li><a href="javascript:void(0)">首页2</a></li>
+			<li><a href="javascript:void(0)">首页3</a></li>
+			<li><a href="javascript:void(0)">首页4</a></li>
+			<li><a href="javascript:void(0)">首页5</a></li>
+		</ul>
+		<script src="js/new_file38.js"></script>
+		<script>
+			window.onload = function (){
+				var ul = getEle("box");
+				var arrlis = ul.getElementsByTagName("a");
+				for(var i = 0 ; i < arrlis.length ; i ++){
+					arrlis[i].onclick = function (){
+						this.parentNode.className = "box1";
+						for(var i = 0 ; i < getAllSiblings(this.parentNode).length ; i ++)
+						{
+							getAllSiblings(this.parentNode)[i].className = "";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id = "test-register" action="#" target="_blank" onsubmit="return checkCondition()">
+			<p id = "test-error" style="color: red;">321321</p>
+			<p>用户名:<input type="text" id = "username" name = "username"/></p>
+			<p>口令:<input type="password" id = "password" name="password"</p>
+			<p>重复口令:<input type="password" id = "password-2"</p>
+			<button type="submit">submit</button>
+			<button type="reset">reset</button>
+		</form>
+	</body>
+	<script>
+//		var re = /^\d{3}\-\d{3,8}$/;
+//		console.log(re.test('010-12345')); // true
+//		console.log(re.test('010-1234x')); // false
+//		console.log(re.test('010 12345')); // false
+		function checkCondition()
+		{
+			var username = document.getElementById("username");
+			var password1 = document.getElementById("password");
+			var password2 = document.getElementById("password-2");
+			
+//			var regexp = new RegExp("\w{3,10}");
+			var re = /^\w{3,10}$/;
+//			var re = /^[a-zA-Z0-9]{3,10}$/;
+			var regBool = re.test(username.value);
+//			console.log(regBool);
+//			var usernameleng = username.value.length;
+//			var username = username.value.length <= 10 ? (username.value.length >= 3 ? true : false) : false;
+			var re2 = /^.{6,20}$/;
+			var regps = re2.test(password1.value);
+			console.log(regps);
+			var equal = password1.value === password2.value ;
+			return regBool && regps && equal;
+		}
+	</script>
+</html>

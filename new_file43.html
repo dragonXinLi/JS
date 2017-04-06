@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				marker: 0px;
+				padding: 0px;
+			}
+			body{
+				background: url(img/image06-11/1.jpg) no-repeat;
+			}
+			.box{
+				height: 165px;
+				padding-top: 35px;
+				text-align: center;
+				background: rgba(255,255,255,0.3);
+			}
+			img{
+				cursor: pointer;
+				margin: 0 10px;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/image06-11/1.jpg"/>
+			<img src="img/image06-11/2.jpg"/>
+			<img src="img/image06-11/3.jpg"/>
+			<img src="img/image06-11/4.jpg"/>
+			<img src="img/image06-11/5.jpg"/>
+		</div>
+		<script src="js/new_file38.js"></script>
+		<script>
+			window.onload = function(){
+				var tb = document.body;
+				var imgs = getSingleEleByClassName("box").children;
+				for(var i = 0 ; i < imgs.length ; i ++){
+					imgs[i].onclick = function(){
+						console.log(this.src);
+						//$ ${this.src} 拼接字符串
+						tb.style.backgroundImage = `url(${this.src})`;
+//						tb.style.backgroundImage = "url("+this.src+")";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

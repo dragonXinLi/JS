@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				list-style: none;
+				height: 100px;
+				width: 100px;
+				background-color: pink;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="box1">aaa</li>
+			<li class="box2">bbb</li>
+			<li id="box3">ccc</li>
+			<li class="box4">ddd</li>
+			<li class="box5">eee</li>
+		</ul>
+		<script>
+			var box3 = document.getElementById("box3");
+//			box3.parentNode.style.backgroundColor = "red";
+			
+			var pre = box3.previousElementSibling || box3.previousSibling;
+			var nex = box3.nextElementSibling || box3.nextSibling;
+			pre.style.backgroundColor = "red";
+			console.log(pre.className);
+			nex.style.backgroundColor = "yellow";
+			console.log(nex.className);
+
+			//$ lastElementChild和firstElementChild必须放在前面？？？
+			//			var fist = box3.parentNode.firstChild || box3.parentNode.firstElementChild;
+			var fist = box3.parentNode.firstElementChild || box3.parentNode.firstChild;
+			
+			var last = box3.parentNode.lastElementChild || box3.parentNode.lastChild;
+			//		    var last = box3.parentNode.lastElementChild || box3.parentNode.lastChild;
+			
+			fist.style.backgroundColor = "yellow";
+			console.log(fist.className);
+			last.style.backgroundColor = "orange";
+			console.log(last.className);
+			
+			var arr = box3.parentNode.children;
+			console.log(arr);
+			for(var i = 0; i < arr.length; i++) {
+				arr[i].style.backgroundColor = "black";
+}
+			
+			arr = box3.parentNode.childNodes;
+			console.log(arr);
+			for(var i = 0; i < arr.length; i++) {
+//				console.log( arr[i].className);
+//				console.log( arr[i].nodeType);
+				if(arr[i].nodeType === 1) {
+					console.log(arr[i]);
+				}
+			}
+		</script>
+	</body>
+</html>

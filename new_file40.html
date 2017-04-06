@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				border: 10px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" style="width: 100px; height: 200px; background-color: red;">我爱你中国</div>
+		<script src="js/new_file38.js"></script>
+		<script>
+			var box = getSingleEleByClassName("box");
+			console.log(box);
+			console.log(box.className);
+			console.log(box.style.cssText);
+			box.onmouseover = function (){
+				box.style.width = "300px";
+				box.style.height = "300px";
+				box.style.backgroundColor = "black";
+				box.style.opacity = 0.3;
+				box.style.filter = "alpha(opacity=20)"
+			}
+		</script>
+	</body>
+</html>

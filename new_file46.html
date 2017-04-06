@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button>创建</button>
+		<ul>
+			<li>我不是创建的</li>
+		</ul>
+		<script>
+			window.onload = function(){
+				var but = document.getElementsByTagName("button")[0];
+				but.onclick = function (){
+//					会把document里面的标签全部覆盖
+//					document.write("<li>我是document创建出来的</li>");
+				}
+			}
+		</script>
+	</body>
+</html>

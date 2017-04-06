@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin: 5px;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li id= "box">3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script src="js/new_file38.js"></script>
+		<script>
+			var box = getEle("box");
+			console.log(box);
+			box.style.backgroundColor = "saddlebrown";
+			
+			var parent = box.parentNode;
+			getFirstNode(parent).style.backgroundColor = "blue";
+			getLastNode(parent).style.backgroundColor = "blue";
+			
+			getPrevNode(box).style.backgroundColor = "black";
+			getNextNode(box).style.backgroundColor = "black";
+			
+			getEleOfIndex(box,4).style.backgroundColor = "orange";
+			
+			var arr = getAllSiblings(box);
+			for (var i = 0 ; i < arr.length ; i++){
+				arr[i].style.backgroundColor = "pink";
+			}
+		</script>
+	</body>
+</html>
