@@ -16,11 +16,21 @@
 		</ul>
 		<script>
 			window.onload = function(){
+//				1.利用document.write()创建dom元素
 				var but = document.getElementsByTagName("button")[0];
 				but.onclick = function (){
 //					会把document里面的标签全部覆盖
 //					document.write("<li>我是document创建出来的</li>");
 				}
+//				2.利用元素的innerHTML方法,(innerText方法不识别标签)
+				var ul = document.getElementsByTagName("ul")[0];
+				ul.innerHTML += "<li id = 'li1'>我是innerHTML创建的</li>";
+//				3.利用dom的api创建的
+				var li = document.createElement("li");
+				li.innerHTML = "我是createElement创建的";
+				
+				var oldLi = document.getElementById("li1");
+				ul.insertBefore(li,oldLi);
 			}
 		</script>
 	</body>
