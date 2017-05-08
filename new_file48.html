@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<button>创建列表</button>
+		<ul></ul>
+		<script>
+			var but = document.getElementsByTagName("button")[0];
+			var ul = document.getElementsByTagName("ul")[0];
+			
+			but.onclick = function (){
+				for (var i = 0 ; i < 3 ; i ++) {
+					var newLi = document.createElement("li");
+					ul.appendChild(newLi);
+				}
+				for (var i = 0; i <3 ; i ++) {
+					var li = ul.children[i];
+					li.onmouseover = function ()
+					{
+						for (var j = 0 ; j <3 ; j ++) {
+							var li2 = ul.children[j];
+							li2.style.backgroundColor = "";
+						}
+						this.style.backgroundColor = "red";	
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
