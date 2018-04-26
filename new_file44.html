@@ -10,12 +10,31 @@
 		</div>
 		<script src="js/new_file38.js"></script>
 		<script>
-			var div = getSingleEleByClassName("box");
+			var div = getSingleEleByClassName("id");
 			div.style.cssText = "width: 100px; height: 100px; background-color: red;"
 			div.onclick = function(){
 				div.style.display = "none";
 				this.style.opacity = "0";
-			}
+				console.log(this); 
+			    function calculate() {
+			       // this is window or undefined in strict mode
+			       console.log(this); 
+			    };
+			    calculate();			    
+			    
+//			    4.1
+//			    function sayHi() {
+//				  if (arguments[0] == "bye") {
+//				    return;
+//				  }
+//				  alert(arguments[0]);
+//				}
+//				sayHi();
+
+
+				
+			};
+
 		</script>
 	</body>
 </html>
